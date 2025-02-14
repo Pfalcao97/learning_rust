@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-const PI:f64 = 3.1415;
+const PI: f64 = 3.1415;
 
 /// A CLI to calculate geometrical shapes properties
 #[derive(Debug, Parser)]
@@ -16,9 +16,9 @@ enum Commands {
     #[command(arg_required_else_help = true)]
     Square { side: f64 },
 
-    /// The Circle shape 
+    /// The Circle shape
     #[command(arg_required_else_help = true)]
-    Circle {radius: f64 }    
+    Circle { radius: f64 },
 }
 
 fn main() {
@@ -26,10 +26,10 @@ fn main() {
 
     match args.command {
         Commands::Square { side } => {
-            println!("Square of area {:?}", side*side);
+            println!("Square of area {:?}", side * side);
         }
-        Commands::Circle {radius} => {
-		println!("Circle of area {:?}", PI*radius.powf(2.0))
-	}
+        Commands::Circle { radius } => {
+            println!("Circle of area {:?}", PI * radius.powf(2.0))
+        }
     }
 }
