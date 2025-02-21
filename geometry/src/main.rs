@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-const PI: f64 = 3.1415;
+use geometry::{Rectangle, Square, Triangle, Circle, Area};
 
 /// A CLI to calculate geometrical shapes properties
 #[derive(Debug, Parser)]
@@ -14,11 +14,19 @@ struct Cli {
 enum Commands {
     /// The Square shape
     #[command(arg_required_else_help = true)]
-    Square { side: f64 },
+    Square { side: f32 },
 
     /// The Circle shape
     #[command(arg_required_else_help = true)]
-    Circle { radius: f64 },
+    Circle { radius: f32 },
+
+    /// The Rectangle shape
+    #[command(arg_required_else_help = true)]
+    Rectangle { width: f32, height: f32 },
+
+    /// The Triangle shape
+    #[command(arg_required_else_help = true)]
+    Triangle { width: f32, height: f32 },
 }
 
 fn main() {
@@ -26,10 +34,28 @@ fn main() {
 
     match args.command {
         Commands::Square { side } => {
-            println!("Square of area {:?}", side * side);
+            println!("Area of the square: {:?} units^2.", Square {
+                side
+            }.area()
+        )
         }
         Commands::Circle { radius } => {
-            println!("Circle of area {:?}", PI * radius.powf(2.0))
+            println!("Area of the square:car {:?} units^2.", Circle {
+                radius
+            }.area()
+        )
+        }
+        Commands::Rectangle { width, height } => {
+            println!("Area of the square: {:?} units^2.", Rectangle {
+                width, height
+            }.area()
+        )
+        }
+        Commands::Triangle { width, height } => {
+            println!("Area of the square: {:?} units^2.", Triangle {
+                width, height
+            }.area()
+        )
         }
     }
 }
