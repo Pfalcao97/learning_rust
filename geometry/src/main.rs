@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-use geometry::{Rectangle, Square, Triangle, Circle, Area};
+use geometry::{Area, Circle, Rectangle, Square, Triangle};
 
 /// A CLI to calculate geometrical shapes properties
 #[derive(Debug, Parser)]
@@ -34,28 +34,25 @@ fn main() {
 
     match args.command {
         Commands::Square { side } => {
-            println!("Area of the square: {:?} units^2.", Square {
-                side
-            }.area()
-        )
+            println!("Area of the square: {:?} units^2.", Square { side }.area())
         }
         Commands::Circle { radius } => {
-            println!("Area of the square:car {:?} units^2.", Circle {
-                radius
-            }.area()
-        )
+            println!(
+                "Area of the square:car {:?} units^2.",
+                Circle { radius }.area()
+            )
         }
         Commands::Rectangle { width, height } => {
-            println!("Area of the square: {:?} units^2.", Rectangle {
-                width, height
-            }.area()
-        )
+            println!(
+                "Area of the square: {:?} units^2.",
+                Rectangle { width, height }.area()
+            )
         }
         Commands::Triangle { width, height } => {
-            println!("Area of the square: {:?} units^2.", Triangle {
-                width, height
-            }.area()
-        )
+            println!(
+                "Area of the square: {:?} units^2.",
+                Triangle { width, height }.area()
+            )
         }
     }
 }

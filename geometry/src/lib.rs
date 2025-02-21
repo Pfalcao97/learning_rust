@@ -1,5 +1,3 @@
-
-
 pub trait Area {
     fn area(&self) -> f32;
 }
@@ -17,7 +15,7 @@ impl Area for Rectangle {
 }
 
 pub struct Square {
-    pub side:f32 
+    pub side: f32,
 }
 
 impl Area for Square {
@@ -26,7 +24,6 @@ impl Area for Square {
     }
 }
 
-
 pub struct Triangle {
     pub width: f32,
     pub height: f32,
@@ -34,12 +31,12 @@ pub struct Triangle {
 
 impl Area for Triangle {
     fn area(&self) -> f32 {
-        (self.width * self.height)/2.0
+        (self.width * self.height) / 2.0
     }
 }
 
 pub struct Circle {
-    pub radius:f32
+    pub radius: f32,
 }
 
 const PI: f32 = 3.1415;
